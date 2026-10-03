@@ -2121,6 +2121,9 @@ output = output + "\n      # Minibosses"
 miniboss_ids = []
 
 for enemy in vanilla_minibosses:
+  if(enemy[0] in excluded_enemies):
+    miniboss_ids.append(random.choice(vanilla_minibosses)[1])
+    continue
   miniboss_ids.append(enemy[1])
 
 random.shuffle(miniboss_ids)
@@ -2134,6 +2137,9 @@ output = output + "\n      # Basic"
 basic_ids = []
 
 for enemy in vanilla_basics:
+  if(enemy[0] in excluded_enemies):
+    basic_ids.append(random.choice(vanilla_basics)[1])
+    continue
   basic_ids.append(enemy[1])
 
 random.shuffle(basic_ids)
